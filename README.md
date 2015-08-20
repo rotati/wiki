@@ -1,3 +1,3 @@
 # Rotati WIKI
 
-[The public Rotati wiki](https://github.com/rotati/wiki/wiki)
+[The Public Rotati Wiki](https://github.com/rotati/wiki/wiki)
