@@ -1,4 +1,2 @@
-# wiki
+# Rotati WIKI
 The public Rotati wiki
-
-This is our readme
