@@ -14,4 +14,8 @@
 
 [Useful online tools](https://github.com/rotati/wiki/wiki/Useful-online-tools)
 
+[Getting start with ionic](https://github.com/rotati/wiki/wiki/Getting-Start-Mobile-Hybrid-App-with-Ionic)
+
+[Getting start with Rubymotion](https://github.com/rotati/wiki/wiki/Getting-Started-Mobile-Hybrid-App-with-RubyMotion)
+
 ...and many more [pages](https://github.com/rotati/wiki/wiki/)
