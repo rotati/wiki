@@ -11,10 +11,10 @@ Link: [GetHttpsForFree](https://gethttpsforfree.com/)
 2. Log in to server "ssh deployer@ipaddress". Ex: ssh deployer@0.0.0.0
 
 3. Generate Account Key(run this in server):
-openssl genrsa 4096 > account.key
+```openssl genrsa 4096 > account.key```
 
 4. Read Public Account Key(run this in server):
-openssl rsa -in account.key -pubout
+```openssl rsa -in account.key -pubout```
 
 5. Copy the public account key and Paste it in "Account Public Key"
 
@@ -23,10 +23,10 @@ openssl rsa -in account.key -pubout
 **Step 2: Generate CSR For example.com**
 
 1. Generate private key for domain name(run this in server):
-openssl genrsa -out example.com.key 4096
+```openssl genrsa -out example.com.key 4096```
 
 2. Generate csr for domain name(run this in server):
-openssl req -new -key example.com.key -out example.com.csr
+```openssl req -new -key example.com.key -out example.com.csr```
   * Country Name (2 letter code) [AU]:KM
   * State or Province Name (full name) [Some-State]:Phnom Penh
   * Locality Name (eg, city) []:Phnom Penh
@@ -38,7 +38,7 @@ openssl req -new -key example.com.key -out example.com.csr
   * An optional company name []:
 
 3. Read example.com.csr(run this in server):
-cat example.com.csr
+```cat example.com.csr```
 
 4. Copy the csr and Paste it in "Certificate Signing Request"
 
@@ -46,7 +46,7 @@ cat example.com.csr
 
 **Step 3: Sign API Requests**
 
-At this step, there should be 3 given commands. Run each command in server, one by one.
+At this step, there should be ***3 given commands***. Run each command in server, one by one.
 Copy the output of each command and paste it input box below each given commands.
 The output should like this format: (stdin)=...
 
@@ -56,25 +56,25 @@ Click "Validate Signatures" Button
 
 1. There should be 1 given command(run this in server): run the given command and copy the output and paste it in input box below the given command.
 
-2. Open New Terminal Tab and Log in to server "ssh deployer@example.com"
+2. Open New Terminal Tab and Log in to server ```ssh deployer@example.com```
 
-3. Stop Nginx Service in depolyer@example.com terminal: sudo service nginx stop
+3. Stop Nginx Service in depolyer@example.com terminal: ```sudo service nginx stop```
 
-4. Run the given python command in depolyer@example.com terminal.
+4. Run the given ***python command*** in depolyer@example.com terminal.
 
 5. Click "I'm now running this command on example.com"
 
 **Step 5: SSl Certificate**
 
-Copy the "Signed Certificate" and "Intermediate Certificate" and paste it in one file.
-The file should be named it "example.com.crt".
+Copy the ***Signed Certificate*** and ***Intermediate Certificate*** and paste it in one file.
+The file should be named it ***example.com.crt***.
 
 **Verify Certificate**
 
 1. Find sha256sum from example.com.key(run this in server):
-openssl pkey -in example.com.key -pubout -outform pem | sha256sum 
+```openssl pkey -in example.com.key -pubout -outform pem | sha256sum ```
 
 2. Find sha256sum from example.com.crt(run this in server):
-openssl x509 -in example.com.crt -pubkey -noout -outform pem | sha256sum
+```openssl x509 -in example.com.crt -pubkey -noout -outform pem | sha256sum```
 
-The outputs are required to be matched each others.
+***The outputs are required to be matched each others.***
